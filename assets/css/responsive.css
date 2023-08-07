@@ -1,0 +1,92 @@
+/* Styles for screens up to 600px wide */
+@media (max-width: 600px) {
+    .section-header h2{
+        font-size: 30px;
+        margin-left:5%;
+    }
+    .shop-the-look{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .relative{
+        margin-bottom:20px;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .shop-the-look_products{
+        display: none;
+    }
+    .product-card-mobile{
+        display: block;
+    }
+    .cart-one, .cart-two {
+        min-width: 293px;
+      }
+  }
+  
+  /* Styles for screens between 601px and 1024px wide */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .section-header h2{
+        font-size: 30px;
+        margin-left:5%;
+    }
+    .shop-the-look{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .relative{
+        margin-bottom:20px;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .shop-the-look_products{
+        display: none;
+    }
+    .product-card-mobile{
+        display: block;
+    }
+    .cart-one, .cart-two {
+        min-width: 293px;
+      }
+  }
+  
+  /* Styles for screens larger than 1024px wide */
+  @media (min-width: 1025px) {
+    .product-card-mobile {
+        display: none;
+    }
+  }
+  
+  @media (min-width: 320px) {
+    .cart-one, .cart-two {
+        min-width: 230px;
+      }
+  }
+  @media (min-width: 350px) {
+    .cart-one, .cart-two {
+        min-width: 243px;
+      }
+  }
+  
+  @media (min-width: 370px) {
+    .cart-one, .cart-two {
+        min-width: 260px;
+      }
+  }
+  @media (min-width: 400px) {
+    .cart-one, .cart-two {
+        min-width: 282px;
+      }
+  }
+  @media (min-width: 440px) {
+    .cart-one, .cart-two {
+        min-width: 325px;
+      }
+  }
+  @media (min-width: 560px) {
+    .cart-one, .cart-two {
+        min-width: 394px;
+      }
+  }

@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 .container-fluid{
     width:100%;
@@ -27,43 +28,88 @@
 }
 /* dot button */
 
-:root{
-    --dot-btn-one-position-top:47%;
-    --dot-btn-one-position-left:16%;
-    --dot-btn-two-position-top:38%;
-    --dot-btn-two-position-left:67%;
-    --rounded-full:9999px;
-    --background:255 255 255;
-}
 .relative{
     position: relative;
 }
-/* problem start */
+
+:root{
+    --dot-btn-top: 47%;
+    --dot-btn-left: 19%;  
+    --spacing-6:1.25rem;
+    --rounded-full:9999px;
+    --shop-the-look-dot-background:255 255 255;
+    --spacing-12:2.5rem;
+  }
 .dot-btn-one{
     --dot-size: 10px;
-    top: calc(var(--dot-btn-one-position-top) - (var(--dot-size) / 2));
-    left: calc(var(--dot-btn-one-position-left) - (var(--dot-size) / 2));
+    position: absolute;
+    top: calc(var(--dot-btn-top) - (var(--dot-size) / 2)) ;
+    left: calc(var(--dot-btn-left) - (var(--dot-size) / 2)) ;
     width: var(--dot-size);
     height: var(--dot-size);
     border-radius: var(--rounded-full);
-    background-color: rgb(var(--background));
+    background-color: rgb(var(--shop-the-look-dot-background));
     transition: transform .2s ease-in-out;
-    position: absolute;
-    cursor:pointer;
-}
-.dot-btn-two{
-    --dot-size: 10px;
-    top: calc(var(--dot-btn-two-position-top) - (var(--dot-size) / 2));
-    left: calc(var(--dot-btn-two-position-left) - (var(--dot-size) / 2));
-    width: var(--dot-size);
-    height: var(--dot-size);
-    border-radius: var(--rounded-full);
-    background-color: rgb(var(--background));
-    transition: transform .2s ease-in-out;
-    position: absolute;
     cursor: pointer;
 }
-.dot-button span{
+.dot-btn-one[aria-current="true"] {
+    transform: scale(1.3);
+}
+
+ .dot-btn-one::after {
+    content: "";
+    top: calc(50% + (var(--spacing-6) * -1));
+    left: calc(50% + (var(--spacing-6) * -1));
+    width: var(--spacing-12);
+    height: var(--spacing-12);
+    background: radial-gradient(50% 50% at 50% 50%,rgb(var(--shop-the-look-dot-background) / 0),rgb(var(--shop-the-look-dot-background) / .3));
+    border-radius: var(--rounded-full);
+    animation: 2s ease-in-out infinite alternate ping;
+    position: absolute;
+  }
+  @keyframes ping {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+/* btn one end */
+:root{
+    --dot-btn-top: 39%;
+    --dot-btn-left: 66%;  
+  
+  }
+.dot-btn-two{
+    --dot-size: 10px;
+    position: absolute;
+    top: calc(var(--dot-btn-top) - (var(--dot-size) / 2)) ;
+    left: calc(var(--dot-btn-left) - (var(--dot-size) / 2)) ;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: var(--rounded-full);
+    background-color: rgb(var(--shop-the-look-dot-background));
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+}
+.dot-btn-two[aria-current="true"] {
+    transform: scale(1.3);
+}
+.dot-btn-two::after {
+    content: "";
+    top: calc(50% + (var(--spacing-6) * -1));
+    left: calc(50% + (var(--spacing-6) * -1));
+    width: var(--spacing-12);
+    height: var(--spacing-12);
+    background: radial-gradient(50% 50% at 50% 50%,rgb(var(--shop-the-look-dot-background) / 0),rgb(var(--shop-the-look-dot-background) / .3));
+    border-radius: var(--rounded-full);
+    animation: 2s ease-in-out infinite alternate ping;
+    position: absolute;
+  }
+  .sr-only{
     width: 1px;
     height: 1px;
     clip: rect(0,0,0,0);
@@ -73,8 +119,8 @@
     padding: 0;
     position: absolute;
     overflow: hidden;
-}
-/* problem end */
+  }
+/* dot button */
 
 
 
@@ -101,9 +147,9 @@
 
 .product-card_badge span{
     position: absolute;
-    left:9rem;
+    left:8rem;
     top:1rem;
-    padding:5px 10px;
+    padding:5px 11px;
     color:white;
     background-color:#3C619E;
     font-weight: bold;
@@ -128,17 +174,28 @@
 /* product card quick buy */
 .product-card_quick-buy{
     position: absolute;
-    bottom:10px;
-    right:10px;
-    background-color: blue;
-    padding:5px 10px;
-
+    bottom:33px;
+    right:18px;
 }
-.product-card_quick-buy button{
+.product-card_quick-buy a{
     color:white;
     border:none;
     background:transparent;
     cursor: pointer;
+    background-color:#272727;
+    padding:14px 24px;
+    outline: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border:2px solid #272727;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+}
+.product-card_quick-buy a:hover{
+    background:transparent;
+    color:#272727;
+    border:2px solid #272727;
+    transition: all 0.2s ease-in;
 }
 /* Product name and price */
 .product-name-price{
@@ -267,3 +324,84 @@
 .prev-next-btn li.prev:hover span:before{
     transform: rotate(45deg) translate(-1px , -1px) scaleX(1);
 }
+/* quick buy button */
+
+/* product card for mobile */
+.product-card-mobile {
+    overflow: hidden;
+}
+.product-card-container{
+    transform: translateX(0%);
+    display: flex;
+    width: 100vw;
+    margin-left:5%;
+}
+.cart-one, .cart-two {
+    min-width: 497px;
+}
+.cart-one, .cart-two{
+    display:flex;
+    width: 75%;
+    background-color: #F2F2F2;
+    padding:20px;
+    overflow: hidden;
+    margin-right:6px;
+    transition: all 0.4s ease-in-out;
+}
+.cart-two{
+    margin-right:5%;
+}
+.product-image{
+    width:30%
+}
+.name-price{
+    width:70%;
+}
+.name-price .name{
+    font-size: 12px;
+    text-decoration: none;
+    color:black;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.name:hover{
+    border-bottom: 1px solid black;
+    transition:0.5s ease-in;
+}
+.name-price p{
+    padding:4px 0;
+    color:#272727;
+    font-size: 12px;
+    margin:14px 0
+}
+.name-price .button{
+    text-decoration: none;
+    padding:8px 14px;
+    background-color: #d3d3d3;
+    border:2px solid #d3d3d3;   
+    font-size:12px;
+    color:black;
+    font-weight: 600;
+    transition:all 0.2s ease-in-out;
+}
+.name-price .button:hover{
+    background-color: transparent;
+    border:2px solid black;
+}
+
+
+/* #product-container{
+    position: relative;
+}
+#image2, #image3, #image4{
+    display: none;
+    position: absolute;
+}
+
+#image1:hover ~ #image2,
+#image2:hover ~ #image3,
+#image3:hover ~ #image4,
+#image4:hover ~ #image1 {
+    opacity: 1;
+    display: block;
+} */

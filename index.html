@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact</title>
     <link rel="stylesheet" href="./assets//css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
     <section>
@@ -17,11 +18,11 @@
                     <div class="relative">
                         <img src="./assets/img/Pandarine.jpg" alt="">
                         <div class="dot-button">
-                            <button class="dot-btn-one dot-btn-one-position" onclick="showCardOne()">
-                                <span>item 1</span>
+                            <button type="button" class="dot-btn-one"  style="--dot-btn-top: 47%; --dot-btn-left: 19%;" aria-current="true" onclick="showCartOne()">
+                                <span class="sr-only">item 1</span>
                             </button>
-                            <button class="dot-btn-two dot-btn-two-position" onclick="showCardTwo()">
-                                <span>item 2</span>
+                            <button type="button" class="dot-btn-two "  style="--dot-btn-top: 39%; --dot-btn-left: 66%;" aria-current="true" onclick="showCartTwo()">
+                                <span class="sr-only">item 2</span>
                             </button>
                             
                         </div>
@@ -32,11 +33,10 @@
                         </div>
                         <div class="product-card_figure" id="product-card-one" style="display: block;">
                             <a href="" id="product-container">
-                                <img src="https://impact-theme-home.myshopify.com/cdn/shop/products/508044_Bottoms_Up_Vase_L_navy_blue.jpg?v=1653058200&width=1500" alt="">
-                                <!-- <img src="https://impact-theme-home.myshopify.com/cdn/shop/products/Bottoms_Up_Vase_electric_blue_S_amber_L_navy_blue_L.jpg?v=1653735756&width=1500" alt=""> -->
+                                <img src="./assets/img/blueVase.webp" alt="">                                
                             </a>
-                            <div class="product-card_quick-buy">
-                                <button>+ Quick add</button>
+                            <div class="product-card_quick-buy" style="display: none;">
+                                <a href="">+ Quick add</a>
                             </div>
                             <div class="product-card_info">
                                 <div class="rating-with-text">
@@ -63,11 +63,11 @@
                         </div>
                         <div class="product-card_figure" id="product-card-two" style="display: none;">
                             <a href="" id="product-container">
-                                <img id="colorImage" src="https://cdn.shopify.com/s/files/1/0646/1220/4800/products/507901.jpg?v=1662373900&width=1000" alt="">
-                                <!-- <img src="https://impact-theme-home.myshopify.com/cdn/shop/products/Bottoms_Up_Vase_electric_blue_S_amber_L_navy_blue_L.jpg?v=1653735756&width=1500" alt=""> -->
+                                <img id="colorImage"  src="./assets/img/gray.jpg" class="hover-image" alt="">                               
+                                
                             </a>
-                            <div class="product-card_quick-buy">
-                                <button>+ Quick add</button>
+                            <div class="product-card_quick-buy" style="display: none;">
+                                <a href="">+ Quick add</a>
                             </div>
                             <div class="product-card_info">
                                 <div class="rating-with-text">
@@ -87,7 +87,7 @@
                                     </span>
                                    <p style="color:#EC8686">From $79.00    <del style="color:#605f5f"> $95.00</del></p>
                                 </div>
-                                <fieldset class="color-choice">
+                                <fieldset class="color-choice plica-color">
                                     <div class="color gray active" data-color="gray" ></div>
                                     <div class="color light " data-color="light"></div>
                                     <div class="color lightRed " data-color="lightRed"></div>
@@ -100,6 +100,32 @@
                             <li onclick="showCardToggle()" class="next"><span></span></li>
                         </ul>
                         
+                    </div>
+                    <div class="product-card-mobile">
+                        <div class="product-card-container">
+                            <div class="cart-one" onclick="showCartOne()">
+                                <div class="product-image">
+                                    <img src="./assets//img/blueVase.webp" alt="">
+                                </div>
+                                <div class="name-price">
+                                    <a class="name" href="">
+                                        Bottoms Up Vase (Navy Blue)  </a>
+                                    <p>$68.00</p>
+                                    <a class="button" href=""> + Add</a>
+                                </div>
+                            </div>
+                            <div class="cart-two" onclick="showCartTwo()">
+                                <div class="product-image">
+                                    <img src="./assets/img/gray.jpg" alt="">
+                                </div>
+                                <div class="name-price">
+                                    <a class="name" href="">Plica Sprinkle Cushion
+                                    </a>
+                                    <p>$79.00</p>
+                                    <a class="button" href="">+ Add</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
