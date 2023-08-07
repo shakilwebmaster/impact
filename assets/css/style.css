@@ -165,7 +165,105 @@
 .color-choice .color{
     width:16px;
     height:8px;
-    background-color: #475785;
     cursor: pointer;    
     margin:0 2px;
+}
+.gray{
+    background-color: #BEBDB9;
+}
+.light{
+    background-color: #F3DF66;
+}
+.lightRed{
+    background-color: #F6D0C3;
+}
+.green{
+    background-color: #83A190;
+}
+.vase-gray{
+    background-color: #475785;
+}
+ .active{
+    border-bottom:2px solid black;
+    margin-top:1px;
+
+}
+/* previous and next btn */
+.prev-next-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:-30px;
+    
+}
+.prev-next-btn li{
+    width:40px;
+    height:40px;
+    text-decoration: none;
+    border-radius: 50%;
+    border:1px solid #b8b7b7;
+    margin:0px 5px;
+    font-size: 20px;
+    list-style-type: none;
+    cursor:pointer;
+    transition:0.5s;
+    position: relative;
+} 
+.prev-next-btn li span{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border:1.5px solid #151414;
+    transition: 0.5s;
+}
+/* next button */
+.prev-next-btn li.next span{
+    top:50%;
+    right:35%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-left:none;
+    border-top:none;
+}
+.prev-next-btn li.next:hover span{
+    right:20%;
+}
+
+.prev-next-btn li.next span:before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    background-color: #151414;
+    transform-origin: right;
+    transform: rotate(45deg) translate(0px , 11px) scaleX(0);
+    transition: 0.5s;
+}
+.prev-next-btn li.next:hover span:before{
+    transform: rotate(45deg) translate(0px , 11px) scaleX(1);
+}
+/* prev button */
+
+.prev-next-btn li.prev span{
+    top:50%;
+    right:35%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-right:none;
+    border-bottom:none;
+}
+.prev-next-btn li.prev:hover span{
+    left:20%;
+}
+
+.prev-next-btn li.prev span:before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #151414;
+    transform-origin: left;
+    transform: rotate(45deg) translate(-1px , -1px) scaleX(0);
+    transition: 0.5s;
+}
+.prev-next-btn li.prev:hover span:before{
+    transform: rotate(45deg) translate(-1px , -1px) scaleX(1);
 }
